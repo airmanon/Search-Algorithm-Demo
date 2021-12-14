@@ -24,6 +24,15 @@ public class Node {
 		this.right = null;
 	}
 
+	/**
+	 * @param key
+	 * @param value
+	 */
+	public Node(int key, String value) {
+		super();
+		this.key = key;
+		this.value = value;
+	}
 
 	/**
 	 * @param key
