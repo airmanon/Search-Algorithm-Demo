@@ -113,6 +113,13 @@ public class AVLTree {
 	    return z;
 	}
 	
+	/**
+	 * @param node the current node being checked
+	 * @param key the key for the new node
+	 * @param value the value for the new node
+	 * @return new node if the area being checked is null
+	 * @return the re-balanced tree starting from node
+	 * */
 	Node insert(Node node, int key, String value) {
 	    if (node == null) {
 	        return new Node(key, value);
