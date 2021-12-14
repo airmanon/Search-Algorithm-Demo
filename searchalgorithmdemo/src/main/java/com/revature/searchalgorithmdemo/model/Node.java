@@ -23,6 +23,15 @@ public class Node {
 		this.left = null;
 		this.right = null;
 	}
+	
+	/**
+	 * @param keyValuePair
+	 * */
+	public Node(KeyValuePair keyValuePair)
+	{
+		this.key = keyValuePair.getKey();
+		this.value = keyValuePair.getValue();
+	}
 
 	/**
 	 * @param key
