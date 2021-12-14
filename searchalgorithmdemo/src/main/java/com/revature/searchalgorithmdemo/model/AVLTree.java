@@ -132,4 +132,44 @@ public class AVLTree {
 	    }
 	    return rebalance(node);
 	}
+	
+	/**
+	 * Helper method for the delete method defined below.
+	 * @param node the current node being checked
+	 * @return the left-most child of the initial node
+	 * */
+	Node mostLeftChild(Node node) {
+        Node current = node;
+        /* loop down to find the leftmost leaf */
+        while (current.left != null) {
+            current = current.left;
+        }
+        return current;
+    }
+	
+	/**
+	 * @param node the current node being checked
+	 * @param key the key of the node to delete
+	 * */
+	Node delete(Node node, int key) {
+	    if (node == null) {
+	        return node;
+	    } else if (node.key > key) {
+	        node.left = delete(node.left, key);
+	    } else if (node.key < key) {
+	        node.right = delete(node.right, key);
+	    } else {
+	        if (node.left == null || node.right == null) {
+	            node = (node.left == null) ? node.right : node.left;
+	        } else {
+	            Node mostLeftChild = mostLeftChild(node.right);
+	            node.key = mostLeftChild.key;
+	            node.right = delete(node.right, node.key);
+	        }
+	    }
+	    if (node != null) {
+	        node = rebalance(node);
+	    }
+	    return node;
+	}
 }
