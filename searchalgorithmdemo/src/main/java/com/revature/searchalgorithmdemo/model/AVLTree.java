@@ -48,6 +48,18 @@ public class AVLTree {
 		return root;
 	}
 
+	public void insert(int key, String value) {
+        root = insert(root, key, value);
+    }
+
+    public void delete(int key) {
+        root = delete(root, key);
+    }
+    
+    public int height() {
+        return root == null ? -1 : root.height;
+    }
+	
 	/**
 	 * @param root the root to set
 	 */
@@ -172,4 +184,19 @@ public class AVLTree {
 	    }
 	    return node;
 	}
+	
+	/**
+	 * @param key the key being searched for
+	 * @return the node with that key or null if not in the tree
+	 * */
+	public Node binarySearch(int key) {
+        Node current = root;
+        while (current != null) {
+            if (current.key == key) {
+               break;
+            }
+            current = current.key < key ? current.right : current.left;
+        }
+        return current;
+    }
 }
