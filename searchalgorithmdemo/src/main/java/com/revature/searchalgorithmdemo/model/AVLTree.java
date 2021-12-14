@@ -48,6 +48,11 @@ public class AVLTree {
 		return root;
 	}
 
+	public void insert(KeyValuePair keyValuePair)
+	{
+		insert(keyValuePair.getKey(), keyValuePair.getValue());
+	}
+	
 	public void insert(int key, String value) {
         root = insert(root, key, value);
     }
