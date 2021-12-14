@@ -117,9 +117,9 @@ public class AVLTree {
 	    if (node == null) {
 	        return new Node(key, value);
 	    } else if (node.key > key) {
-	        node.left = insert(node.left, key);
+	        node.left = insert(node.left, key, value);
 	    } else if (node.key < key) {
-	        node.right = insert(node.right, key);
+	        node.right = insert(node.right, key, value);
 	    } else {
 	        throw new RuntimeException("duplicate Key!");
 	    }
