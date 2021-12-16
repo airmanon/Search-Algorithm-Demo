@@ -106,6 +106,11 @@ public class SearchalgorithmdemoApplication {
 				}
 				System.out.println();
 			}
+			
+			System.out.println("\nDisplaying AVLTree of the list:");
+			System.out.println("Depth-First Search Result: " + myTree.displayDepth());
+			System.out.println("Breadth-First Search Result: " + myTree.displayBreadth());
+			System.out.println();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

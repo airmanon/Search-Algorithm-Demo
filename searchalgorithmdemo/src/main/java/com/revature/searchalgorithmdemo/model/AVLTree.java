@@ -204,4 +204,57 @@ public class AVLTree {
         }
         return current;
     }
+	
+	/**
+	 * @return a String representation of the tree when conducting a Depth-first Search
+	 * */
+	public String displayDepth()
+	{
+		return displayDepth(root);
+	}
+	
+	/**
+	 * @param current the current Node to check
+	 * @return a String representation of the tree when conducting a Depth-first Search
+	 * */
+	private String displayDepth(Node current)
+	{
+		if(current == null)
+		{
+			return null;
+		}
+		String result = current.toString();
+		if(current.getLeft() != null)
+		{
+			result += ", ";
+			result += displayDepth(current.getLeft());
+		}
+		if(current.getRight() != null)
+		{
+			result += ", ";
+			result += displayDepth(current.getRight());
+		}
+		return result;
+	}
+	
+	/**
+	 * @return a String representation of the tree when conducting a Breadth-first Search
+	 * */
+	public String displayBreadth()
+	{
+		if(root == null)
+		{
+			return null;
+		}
+		return null;
+	}
+	
+//	/**
+//	 * @param current the current Node to check
+//	 * @return a String representation of the tree when conducting a Breadth-first Search
+//	 * */
+//	public String displayBreadth(Node current)
+//	{
+//		return null;
+//	}
 }
