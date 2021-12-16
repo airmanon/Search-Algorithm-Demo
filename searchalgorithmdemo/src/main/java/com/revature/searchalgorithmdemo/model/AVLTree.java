@@ -5,6 +5,9 @@
  */
 package com.revature.searchalgorithmdemo.model;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 /**
  * @author Dipanjali Ghosh
  *
@@ -246,15 +249,26 @@ public class AVLTree {
 		{
 			return null;
 		}
-		return null;
+		String result = "";
+		Queue<Node> tempQueue = new ArrayDeque<Node>();
+		tempQueue.add(root);
+		while(!tempQueue.isEmpty())
+		{
+			Node temp = tempQueue.poll();
+			result += temp.toString();
+			if(temp.getLeft() != null)
+			{
+				tempQueue.add(temp.getLeft());
+			}
+			if(temp.getRight() != null)
+			{
+				tempQueue.add(temp.getRight());
+			}
+			if(tempQueue.peek() != null)
+			{
+				result += ", ";
+			}
+		}
+		return result;
 	}
-	
-//	/**
-//	 * @param current the current Node to check
-//	 * @return a String representation of the tree when conducting a Breadth-first Search
-//	 * */
-//	public String displayBreadth(Node current)
-//	{
-//		return null;
-//	}
 }
