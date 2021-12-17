@@ -49,10 +49,10 @@ public class SearchalgorithmdemoApplication {
 				JSONObject temp = (JSONObject) keyValueList.get(i);
 				myList.add(new KeyValuePair(new Integer(((Long)temp.get("key")).intValue()), (String)temp.get("value")));
 			}
-			//System.out.println("Before Shuffle: " + myList);
+			System.out.println("Before Shuffle: " + myList);
 			ArrayList<KeyValuePair> mySortedList = new ArrayList<KeyValuePair>(myList);
 			Collections.shuffle(myList);
-			//System.out.println("After Shuffle: " + myList);
+			System.out.println("After Shuffle: " + myList);
 			AVLTree myTree = new AVLTree();
 			for(int y = 0; y < myList.size(); y++)
 			{
